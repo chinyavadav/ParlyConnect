@@ -1,0 +1,7 @@
+{
+  "name": "ParlyConnect",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

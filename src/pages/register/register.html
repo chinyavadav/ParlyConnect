@@ -1,0 +1,122 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Signup</ion-title>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-image:url('assets/imgs/bg-login.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+  <form (ngSubmit)="register()" [formGroup]="registrationForm">
+    <ion-list class="list-form" style="margin-top:30px;margin-bottom: 30px">
+      <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+        <ion-label floating>Phone No.</ion-label>
+        <ion-input type="number" formControlName="phoneno"></ion-input>
+      </ion-item>      
+      <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+        <ion-label floating>Firstname</ion-label>
+        <ion-input type="text" formControlName="firstname"></ion-input>
+      </ion-item>
+      <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+        <ion-label floating>Surname</ion-label>
+        <ion-input type="text" formControlName="surname"></ion-input>
+      </ion-item>
+      <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+        <ion-label floating>Sex</ion-label>
+        <ion-select formControlName="sex">
+          <ion-option value="Male">Male</ion-option>
+          <ion-option value="Female">Female</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+        <ion-label floating>Constituency</ion-label>
+        <ion-select formControlName="constituency">
+          <ion-option value="Mount Pleasant">Mount Pleasant</ion-option>
+          <ion-option value="Shamva South">Shamva South</ion-option>
+          <ion-option value="Mbare">Mbare</ion-option>
+          <ion-option value="Gokwe Sesame">Gokwe Sesame</ion-option>
+          <ion-option value="Mazowe Central">Mazowe Central</ion-option>
+          <ion-option value="Zengeza East">Zengeza East</ion-option>
+          <ion-option value="Chiwundura">Chiwundura</ion-option>
+          <ion-option value="Mhangura">Mhangura</ion-option>
+          <ion-option value="Buhera South">Buhera South</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="Gwanda Central">Gwanda Central</ion-option>
+          <ion-option value="Kariba">Kariba</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="Mt Darwin South">Mt Darwin South</ion-option>
+          <ion-option value="Sunningdale">Sunningdale</ion-option>
+          <ion-option value="Mhondoro Mubaira">Mhondoro Mubaira</ion-option>
+          <ion-option value="Tsholotsho North">Tsholotsho North</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="Beitbridge West">Beitbridge West</ion-option>
+          <ion-option value="Chipinge Central">Chipinge Central</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="Pumula">Pumula</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="Harare West">Harare West</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="Harare North">Harare North</ion-option>
+          <ion-option value="Hurungwe Central">Hurungwe Central</ion-option>
+          <ion-option value="Nketa">Nketa</ion-option>
+          <ion-option value="Chinhoyi">Chinhoyi</ion-option>
+          <ion-option value="Marondera Central">Marondera Central</ion-option>
+          <ion-option value="Nkayi South">Nkayi South</ion-option>
+          <ion-option value="Chimanimanni West">Chimanimanni West</ion-option>
+          <ion-option value="Zaka North">Zaka North</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="ZvishabaneNgezi">ZvishabaneNgezi</ion-option>
+          <ion-option value="Masvingo Central">Masvingo Central</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="Southerton ">Southerton </ion-option>
+          <ion-option value="Umguza">Umguza</ion-option>
+          <ion-option value="Zvishabane Runde">Zvishabane Runde</ion-option>
+          <ion-option value="Silobela">Silobela</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="Mudzi West">Mudzi West</ion-option>
+          <ion-option value="Mazowe North">Mazowe North</ion-option>
+          <ion-option value="Hurungwe Central">Hurungwe Central</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="Beitbridge East">Beitbridge East</ion-option>
+          <ion-option value="GokweGumunyu">GokweGumunyu</ion-option>
+          <ion-option value="Rushinga">Rushinga</ion-option>
+          <ion-option value="Chipinge West">Chipinge West</ion-option>
+          <ion-option value="Buhera Central">Buhera Central</ion-option>
+          <ion-option value="Shurugwi North">Shurugwi North</ion-option>
+          <ion-option value="Bulawayo East ">Bulawayo East </ion-option>
+          <ion-option value="Mberengwa East">Mberengwa East</ion-option>
+          <ion-option value="Hwange East">Hwange East</ion-option>
+          <ion-option value="Vungu">Vungu</ion-option>
+          <ion-option value="Zengeza West">Zengeza West</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="Makokoba">Makokoba</ion-option>
+          <ion-option value="Insiza South">Insiza South</ion-option>
+          <ion-option value="PR">PR</ion-option>
+          <ion-option value="Chivi North">Chivi North</ion-option>
+          <ion-option value="Emakhandeni-Entumbane">Emakhandeni-Entumbane</ion-option>
+          <ion-option value="Mutasa South">Mutasa South</ion-option>
+          <ion-option value="Bulawayo Central ">Bulawayo Central </ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item-divider style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 17px;margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;"></ion-item-divider>
+    </ion-list> 
+    <button style="font-size: 17px;background: #FF9F00;" bottom ion-button  block  type="submit">Register</button>   
+  </form>
+</ion-content>

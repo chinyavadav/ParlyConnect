@@ -1,0 +1,46 @@
+<!--
+  Generated template for the bookingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>My Bookings [{{ total }}]</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let booking of bookings">
+    <img src="{{this.global.serverAddress }}account/avatars/{{booking.fldapartmentid}}.jpg">
+    <ion-fab right top>
+      <button ion-fab color="danger" (click)="delete(booking.fldapartmentid)">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-fab>
+    <ion-item>
+      <ion-icon name="locate" item-start large></ion-icon>
+      <h2>{{ booking.fldtownship }}, {{ booking.flddistrict }}</h2>
+      <p>{{ booking.fldaddress }}</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="home" item-start large ></ion-icon>
+      <h2>{{ booking.fldapartmentid }}</h2>
+      <p>{{ booking.flddatetime }}</p>
+      <!--button ion-button outline item-end>{{ booking.fldstatus }}</button-->
+    </ion-item>
+    <ion-item *ngIf="booking.fldstatus=='Approved'">
+      <button (click)="openBrowser(booking.fldapartmentid,global.session.fldaccountno)" icon-start ion-button block outline item-end color="primary">
+        <ion-icon  name="image"></ion-icon>
+        View Contract
+      </button>
+    </ion-item>
+    <ion-item *ngIf="booking.fldstatus=='Approved'">
+      <button (click)="confirm(booking.fldapartmentid,booking.fldaccountno)" icon-start ion-button block outline item-end color="secondary">
+        <ion-icon  name="checkmark"></ion-icon>
+        Confirm Contract
+      </button>
+    </ion-item>
+  </ion-card>
+</ion-content>

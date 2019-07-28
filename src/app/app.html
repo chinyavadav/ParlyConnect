@@ -1,0 +1,61 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+    <ion-list *ngIf="global.accessLevel=='PARLIAMENTARIAN'">
+      <button menuClose ion-item detail-none>
+        <ion-icon item-start name="home"></ion-icon> Home</button>
+      <button menuClose ion-item detail-none (click)="openPage(0)">
+        <ion-icon item-start name="book"></ion-icon> Bills</button>
+      <button menuClose ion-item detail-none (click)="openPage(1)">
+        <ion-icon item-start name="paper"></ion-icon> Petitions</button>
+      <button menuClose ion-item detail-none (click)="openPage(3)">
+        <ion-icon item-start name="people"></ion-icon> Committees</button>
+      <ion-item-divider>
+        Account
+    </ion-item-divider>
+      <button menuClose ion-item detail-none (click)="openPage(2)">
+        <ion-icon item-start name="contact"></ion-icon> Profile</button>
+      <button menuClose ion-item detail-none (click)="logout()">
+        <ion-icon item-start name="log-out"></ion-icon> Logout</button>
+    <!--ion-item menuClose detail-none>Close Menu</ion-item-->
+    </ion-list>
+    <ion-list *ngIf="global.accessLevel == 'CITIZEN'">
+      <button menuClose ion-item detail-none>
+        <ion-icon item-start name="home"></ion-icon> Home</button>
+      <button menuClose ion-item detail-none (click)="openPage(0)">
+        <ion-icon item-start name="book"></ion-icon> Bills</button>
+      <button menuClose ion-item detail-none (click)="openPage(1)">
+        <ion-icon item-start name="paper"></ion-icon> Petitions</button>
+      <button menuClose ion-item detail-none (click)="openPage(3)">
+        <ion-icon item-start name="people"></ion-icon> Committees</button>
+      <ion-item-divider>
+        Account
+    </ion-item-divider>
+      <button menuClose ion-item detail-none (click)="openPage(2)">
+        <ion-icon item-start name="contact"></ion-icon> Profile</button>
+      <button menuClose ion-item detail-none (click)="logout()">
+        <ion-icon item-start name="log-out"></ion-icon> Logout</button>
+    <!--ion-item menuClose detail-none>Close Menu</ion-item-->
+    </ion-list>
+    <ion-list *ngIf="!global.accessLevel">
+      <button menuClose ion-item detail-none (click)="openPage(4)">
+        <ion-icon item-start name="cog"></ion-icon> Settings</button>
+    </ion-list>
+
+   </ion-content>
+    <ion-footer padding>
+      <ion-toolbar text-center>
+        <ion-title>
+          <b>ParlyConnect </b><small>v.1.0.1 </small>     
+        </ion-title>       
+      </ion-toolbar>
+  </ion-footer>
+  </ion-menu>
+ 
+<!-- main navigation -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

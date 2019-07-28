@@ -1,0 +1,34 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Bills</ion-title>
+	</ion-navbar>
+	<ion-toolbar no-border-top color="primary">
+		<ion-searchbar showCancelButton autocomplete="on" color="danger" (ionInput)="filterBills($event)" placeholder="Filter Bill"></ion-searchbar>
+	</ion-toolbar>
+</ion-header>
+<ion-content class="card-background-page">
+	<ion-card *ngFor="let bill of bills">
+		<img src="assets/imgs/bill.jpg"/>
+		<h2>{{ bill.fldname }}</h2>
+		<ion-card-content>{{ bill.fldsummary }}</ion-card-content>
+		<ion-row no-padding>
+			<ion-col>
+				<ion-icon name='flag'></ion-icon> {{ bill.fldstatus }}
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<button ion-button icon-start clear block outline color="secondary">
+					<ion-icon name="thumbs-up"></ion-icon>
+					Agree
+				</button>
+			</ion-col>
+			<ion-col>
+				<button ion-button icon-start clear block outline color="danger">
+					<ion-icon name="thumbs-down"></ion-icon>
+					Disagree
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-card>
+</ion-content>

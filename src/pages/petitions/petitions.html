@@ -1,0 +1,23 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Petitions</ion-title>
+	</ion-navbar>
+	<ion-toolbar no-border-top color="primary">
+		<ion-searchbar showCancelButton autocomplete="on" color="danger" (ionInput)="filterPetitions($event)" placeholder="Filter Petitions"></ion-searchbar>
+	</ion-toolbar>
+</ion-header>
+<ion-content class="card-background-page">
+	<ion-card *ngFor="let bill of petitions">
+		<img src="assets/imgs/petition.jpg"/>
+		<h2>{{ bill.fldaddress }}</h2>
+		<ion-card-content>{{ bill.fldbody }}</ion-card-content>
+		<ion-row>
+			<ion-col>
+				<button ion-button icon-start clear block outline color="secondary">
+					<ion-icon name="create"></ion-icon>
+					Sign
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-card>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Committees</ion-title>
+	</ion-navbar>
+	<ion-toolbar no-border-top color="primary">
+		<ion-searchbar showCancelButton autocomplete="on" color="danger" (ionInput)="filterCommittees($event)" placeholder="Filter Committees"></ion-searchbar>
+	</ion-toolbar>
+</ion-header>
+<ion-content class="card-background-page">
+	<ion-card *ngFor="let bill of Committees">
+		<img src="assets/imgs/committee.jpg"/>
+		<h2><b>{{ bill.fldname }}</b></h2>
+		<p>{{ bill.fldtime }}</p>
+		<ion-row no-padding>
+            <ion-col>
+                <ion-icon name='home'></ion-icon> {{ bill.fldvenue }}
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-icon name='person'></ion-icon> {{ bill.fldclerk }}
+            </ion-col>
+        </ion-row>
+        <ion-row>
+			<ion-col>
+				<button ion-button icon-start clear block outline color="secondary">
+					<ion-icon name="share"></ion-icon>
+					Share
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-card>
+</ion-content>

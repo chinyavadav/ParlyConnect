@@ -1,0 +1,40 @@
+<!--
+  Generated template for the apartmentsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>My Apartments [{{ total }}]</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let apartment of apartments">
+    <img src="{{this.global.serverAddress }}account/avatars/{{apartment.fldapartmentid}}.jpg">
+    <ion-fab right top>
+      <button ion-fab color="danger" (click)="delete(apartment.fldapartmentid)">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-fab>
+    <ion-item>
+      <ion-icon name="locate" item-start large></ion-icon>
+      <h2>{{ apartment.fldtownship }}, {{ apartment.flddistrict }}</h2>
+      <p>{{ apartment.fldaddress }}</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="home" item-start large ></ion-icon>
+      <h2>{{ apartment.fldapartmentid }}</h2>
+      <p>{{ apartment.flddatetime }}</p>
+      <!--button ion-button outline item-end>{{ apartment.fldstatus }}</button-->
+    </ion-item>
+    <ion-item>
+      <button (click)="openBrowser(apartment.fldapartmentid,apartment.fldaccountno)" icon-start ion-button block outline item-end color="secondary">
+        <ion-icon  name="document"></ion-icon>
+        View Contract
+      </button>
+    </ion-item>
+  </ion-card>
+</ion-content>

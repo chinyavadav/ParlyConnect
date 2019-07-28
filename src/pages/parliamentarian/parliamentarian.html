@@ -1,0 +1,71 @@
+<!--
+  Generated template for the ParliamentarianPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Apartment [{{ apartment.fldapartmentid }}]</ion-title>
+    <ion-buttons *ngIf="apartment.fldlandlord!=global.session.fldaccountno" end>
+      <button ion-button icon-only (click)="viewProfile(apartment.fldlandlord)">
+        <ion-icon name="contact"></ion-icon>
+      </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-image:url('assets/imgs/bg-login.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+    <ion-card>
+      <img src="{{ imgPath }}"/>
+      <div class="card-title">{{ apartment.fldrooms }} Rooms</div>
+      <div class="card-subtitle">{{ apartment.fldapartmenttype }} Apartment</div>
+      <ion-card-content *ngIf="apartment.fldcomment!=''">
+      {{apartment.fldcomment}}</ion-card-content>
+      	<ion-row no-padding>
+            <ion-col>
+                <ion-icon name='locate'></ion-icon> {{ apartment.fldtownship }}, {{ apartment.flddistrict }}
+            </ion-col>
+            <ion-col>
+                <ion-icon name='cash'></ion-icon> {{ apartment.fldcostrange }}
+            </ion-col>
+        </ion-row>
+    </ion-card>
+    <ion-row padding>
+    	<ion-col>
+	    	<ion-list>
+		        <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 14px; margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+		          <ion-label floating>Bedrooms</ion-label>
+		          <ion-input type="text" readonly value="{{apartment.fldbedrooms}}"></ion-input>
+		        </ion-item>
+		        <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 14px; margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+		          <ion-label floating>Kitchens</ion-label>
+		          <ion-input type="text" readonly value="{{apartment.fldkitchens}}"></ion-input>
+		        </ion-item>
+		    </ion-list>
+    	</ion-col>
+	    <ion-col>
+		    <ion-list>
+		        <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 14px; margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+		          <ion-label floating>Bathrooms</ion-label>
+		          <ion-input type="text" readonly value="{{apartment.fldbathrooms}}"></ion-input>
+		        </ion-item>
+		        <ion-item style="padding:0px !important; border-bottom:none !important;border-top:none;font-size: 14px; margin-top:10px;background:none;border-bottom:1px solid white;box-shadow:none;">
+		          <ion-label floating>Lounges</ion-label>
+		          <ion-input type="text" readonly value="{{apartment.fldlounges}}"></ion-input>
+		        </ion-item>
+		    </ion-list>
+		</ion-col>
+	</ion-row>
+	<ion-fab right bottom *ngIf="global.accessLevel=='LANDLORD'">
+	    <button ion-fab color="danger" (click)="deleteApartment()">
+	      <ion-icon name="close"></ion-icon>
+	    </button>
+  	</ion-fab>
+	<ion-fab right bottom *ngIf="global.accessLevel=='TENANT'">
+	    <button ion-fab (click)="bookApartment()">
+	      <ion-icon name="book"></ion-icon>
+	    </button>
+  	</ion-fab>
+</ion-content>
+
